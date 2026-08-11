@@ -7,7 +7,15 @@ export type SavedPost = {
   text: string;
   title: string;
   source: string;
-  platform?: "LinkedIn" | "X";
+  platform?: "LinkedIn" | "X" | "GitHub";
+  language?: string;
+  topics?: string[];
+  stars?: number;
+  forks?: number;
+  pushedAt?: string | null;
+  activity?: "活跃" | "近期维护" | "低频维护" | "已归档";
+  archived?: boolean;
+  homepage?: string;
   url: string;
 };
 

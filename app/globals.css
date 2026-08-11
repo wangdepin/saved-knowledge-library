@@ -278,7 +278,7 @@ a {
   position: relative;
   z-index: 5;
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) 150px 240px 180px;
+  grid-template-columns: minmax(260px, 1.4fr) repeat(5, minmax(126px, 0.7fr));
   gap: 12px;
   margin: 28px 0 36px;
 }
@@ -472,6 +472,27 @@ a {
   background: #111111;
 }
 
+.platform-github {
+  background: #238636;
+}
+
+.language-label,
+.activity-label {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 2px;
+}
+
+.language-label {
+  color: #7a4100;
+  background: rgba(244, 201, 93, 0.32);
+}
+
+.activity-label {
+  color: #17652a;
+  background: rgba(35, 134, 54, 0.1);
+}
+
 .post-card h3 {
   margin: 28px 0 14px;
   font-size: clamp(21px, 2vw, 29px);
@@ -484,6 +505,20 @@ a {
   color: #536079;
   font-size: 14px;
   line-height: 1.72;
+}
+
+.repo-metrics {
+  margin: 18px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+}
+
+.repo-metrics span:first-child {
+  color: #8a5a00;
 }
 
 .post-card details {

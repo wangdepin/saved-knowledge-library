@@ -1,15 +1,17 @@
 # Saved Knowledge
 
-A searchable personal library built from 2,586 saved LinkedIn and X posts. The
-site organizes posts by source, topic, and author, generates concise excerpts,
-and keeps a direct link to every original post.
+A searchable personal library built from 5,851 saved items: 207 LinkedIn posts,
+2,379 X posts, and 3,265 public GitHub starred repositories. The site organizes
+them by source, topic, author or owner, programming language, and activity, and
+keeps a direct link to every original item.
 
 ## Features
 
-- Full-text search across authors, titles, excerpts, sources, and topics
-- Source, topic, and author filters
+- Full-text search across authors, titles, excerpts, sources, languages, and topics
+- Source, topic, author, programming-language, and repository-activity filters
+- GitHub repository summaries, star and fork counts, and last-push dates
 - Responsive card layout for desktop and mobile
-- Expandable source excerpts and direct links to LinkedIn and X
+- Expandable source excerpts and direct links to LinkedIn, X, and GitHub
 - Automatic GitHub Pages deployment from `main`
 
 ## Local development
@@ -28,6 +30,16 @@ npm run build
 npm run build:pages
 ```
 
+Refresh the GitHub Star export with the currently authenticated GitHub account:
+
+```bash
+npm run sync:github-stars
+```
+
+The sync writes public repository data to `public/data/github-stars.json` and
+updates the lightweight count metadata used during server rendering. Private
+repositories are excluded from the public export.
+
 ## Deployment
 
 The GitHub Actions workflow in `.github/workflows/pages.yml` builds the static
@@ -44,6 +56,7 @@ renewal pricing can change, so check the current terms before choosing a domain.
 
 ## Content note
 
-Summaries are generated from text visible in LinkedIn and X saved-post lists.
-Some long or media-only posts provide limited text; the original post link
-remains the source of truth. Content copyright belongs to the original authors.
+Post summaries are generated from text visible in LinkedIn and X saved-post
+lists. GitHub summaries use each repository description, topics, language, and
+public activity metadata. The original post or repository remains the source of
+truth. Content copyright belongs to the original authors and maintainers.
