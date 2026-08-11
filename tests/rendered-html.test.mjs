@@ -32,25 +32,35 @@ test("server-renders the saved-post library", async () => {
 
   const html = await response.text();
   assert.match(html, /Saved Knowledge/);
-  assert.match(html, /2,586/);
+  assert.match(html, /5,851/);
   assert.match(html, /知识库/);
-  assert.match(html, /LinkedIn 与 X/);
+  assert.match(html, /GitHub/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
-test("ships the complete post index without starter artifacts", async () => {
-  const [posts, xPosts, packageJson] = await Promise.all([
+test("ships the complete saved-content indexes without private repositories", async () => {
+  const [posts, xPosts, githubStarsJson, githubMeta, packageJson] = await Promise.all([
     readFile(new URL("../app/data/posts.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/data/x-posts.ts", import.meta.url), "utf8"),
+    readFile(new URL("../public/data/github-stars.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/github-stars-meta.ts", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
   const linkedInCount = posts.match(/^ {2}\{"author":/gm)?.length ?? 0;
   const xCount = xPosts.match(/^ {4}"id": "x-/gm)?.length ?? 0;
+  const githubStars = JSON.parse(githubStarsJson);
   assert.equal(linkedInCount, 207);
   assert.equal(xCount, 2379);
-  assert.equal(linkedInCount + xCount, 2586);
+  assert.equal(githubStars.length, 3265);
+  assert.equal(linkedInCount + xCount + githubStars.length, 5851);
+  assert.ok(githubStars.every((repository) => repository.platform === "GitHub"));
+  assert.ok(githubStars.every((repository) => repository.url.startsWith("https://github.com/")));
+  assert.ok(githubStars.every((repository) => repository.language && repository.activity));
+  assert.ok(githubStars.every((repository) => !("private" in repository)));
+  assert.match(githubMeta, /["']?count["']?: 3265/);
   assert.match(packageJson, /"name": "saved-knowledge-library"/);
+  assert.match(packageJson, /"sync:github-stars"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));
   await access(new URL("../public/og.png", import.meta.url));

@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { githubStarsMeta } from "./data/github-stars-meta";
 import { savedPosts, type SavedPost } from "./data/posts";
 import { xPosts } from "./data/x-posts";
 
@@ -72,10 +73,20 @@ const linkedInPosts: SavedPost[] = savedPosts.map((post) => ({
   ...post,
   platform: "LinkedIn",
 }));
-const allPosts: SavedPost[] = [...xPosts, ...linkedInPosts];
+const socialPosts: SavedPost[] = [...xPosts, ...linkedInPosts];
+const totalLibraryCount = socialPosts.length + githubStarsMeta.count;
+const activityOptions = ["活跃", "近期维护", "低频维护", "已归档"] as const;
+
+type SortMode = "saved" | "author" | "stars" | "activity";
 
 function topicFor(post: SavedPost) {
-  const haystack = [post.title, post.text, post.source].join(" ");
+  const haystack = [
+    post.title,
+    post.text,
+    post.source,
+    post.language,
+    post.topics?.join(" "),
+  ].join(" ");
   return topics.find((topic) => topic.pattern.test(haystack))?.name ?? fallbackTopic;
 }
 
@@ -88,6 +99,12 @@ function cleanText(value: string) {
 
 function summaryFor(post: SavedPost, limit = 260) {
   const source = cleanText(post.text || post.title || post.source);
+  if (post.platform === "GitHub" && !post.text) {
+    const topicText = post.topics?.slice(0, 3).join("、");
+    return `${post.author} 维护的 ${post.language ?? "开源"} 项目${
+      topicText ? `，主要涉及 ${topicText}` : ""
+    }。当前获得 ${(post.stars ?? 0).toLocaleString("zh-CN")} 个 Star。`;
+  }
   if (!source)
     return `查看 ${post.author} 分享的 ${post.platform ?? "LinkedIn"} 原帖。`;
   if (source.length <= limit) return source;
@@ -123,16 +140,48 @@ function displayTime(value: string) {
 }
 
 export default function Library() {
+  const [githubStars, setGithubStars] = useState<SavedPost[]>([]);
+  const [githubStatus, setGithubStatus] = useState<
+    "loading" | "ready" | "error"
+  >("loading");
   const [query, setQuery] = useState("");
   const [selectedTopic, setSelectedTopic] = useState("全部主题");
   const [selectedAuthor, setSelectedAuthor] = useState("全部作者");
   const [selectedPlatform, setSelectedPlatform] = useState("全部来源");
-  const [sort, setSort] = useState<"saved" | "author">("saved");
+  const [selectedLanguage, setSelectedLanguage] = useState("全部语言");
+  const [selectedActivity, setSelectedActivity] = useState("全部活跃度");
+  const [sort, setSort] = useState<SortMode>("saved");
   const [visible, setVisible] = useState(24);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("data/github-stars.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`GitHub index: ${response.status}`);
+        return response.json() as Promise<SavedPost[]>;
+      })
+      .then((repositories) => {
+        if (cancelled) return;
+        setGithubStars(repositories);
+        setGithubStatus("ready");
+      })
+      .catch(() => {
+        if (!cancelled) setGithubStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const enriched = useMemo(
-    () => allPosts.map((post) => ({ ...post, topic: topicFor(post) })),
-    [],
+    () =>
+      [...githubStars, ...socialPosts].map((post) => ({
+        ...post,
+        topic: topicFor(post),
+      })),
+    [githubStars],
   );
 
   const authors = useMemo(
@@ -151,12 +200,27 @@ export default function Library() {
     return counts;
   }, [enriched]);
 
+  const languages = useMemo(
+    () =>
+      [...new Set(githubStars.map((repository) => repository.language ?? "未标注"))]
+        .sort((a, b) => a.localeCompare(b)),
+    [githubStars],
+  );
+
   const filtered = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase();
     const results = enriched.filter((post) => {
       const matchesQuery =
         !normalized ||
-        [post.author, post.title, post.text, post.source, post.topic]
+        [
+          post.author,
+          post.title,
+          post.text,
+          post.source,
+          post.topic,
+          post.language,
+          post.topics?.join(" "),
+        ]
           .join(" ")
           .toLocaleLowerCase()
           .includes(normalized);
@@ -167,13 +231,42 @@ export default function Library() {
       const matchesPlatform =
         selectedPlatform === "全部来源" ||
         (post.platform ?? "LinkedIn") === selectedPlatform;
-      return matchesQuery && matchesTopic && matchesAuthor && matchesPlatform;
+      const matchesLanguage =
+        selectedLanguage === "全部语言" || post.language === selectedLanguage;
+      const matchesActivity =
+        selectedActivity === "全部活跃度" ||
+        post.activity === selectedActivity;
+      return (
+        matchesQuery &&
+        matchesTopic &&
+        matchesAuthor &&
+        matchesPlatform &&
+        matchesLanguage &&
+        matchesActivity
+      );
     });
     if (sort === "author") {
       return [...results].sort((a, b) => a.author.localeCompare(b.author));
     }
+    if (sort === "stars") {
+      return [...results].sort((a, b) => (b.stars ?? -1) - (a.stars ?? -1));
+    }
+    if (sort === "activity") {
+      return [...results].sort((a, b) =>
+        (b.pushedAt ?? "").localeCompare(a.pushedAt ?? ""),
+      );
+    }
     return results;
-  }, [enriched, query, selectedAuthor, selectedPlatform, selectedTopic, sort]);
+  }, [
+    enriched,
+    query,
+    selectedActivity,
+    selectedAuthor,
+    selectedLanguage,
+    selectedPlatform,
+    selectedTopic,
+    sort,
+  ]);
 
   const allTopicNames = [
     ...topics.map((topic) => topic.name),
@@ -185,6 +278,8 @@ export default function Library() {
     setSelectedTopic("全部主题");
     setSelectedAuthor("全部作者");
     setSelectedPlatform("全部来源");
+    setSelectedLanguage("全部语言");
+    setSelectedActivity("全部活跃度");
     setVisible(24);
   };
 
@@ -203,35 +298,42 @@ export default function Library() {
 
         <div className="hero-grid" id="top">
           <div className="hero-copy">
-            <p className="eyebrow">LINKEDIN + X SAVED LIBRARY · 2026</p>
+            <p className="eyebrow">LINKEDIN + X + GITHUB LIBRARY · 2026</p>
             <h1>
               把收藏变成
               <br />
               <em>随时可用的知识。</em>
             </h1>
             <p className="hero-intro">
-              {allPosts.length.toLocaleString("zh-CN")} 篇已保存帖子，来自
-              LinkedIn 与 X，按主题和作者重新组织。搜索一个关键词，找回当时
-              值得收藏的那个想法。
+              {totalLibraryCount.toLocaleString("zh-CN")} 条收藏，来自 LinkedIn、X
+              与 GitHub，按主题、作者、语言和活跃度重新组织。搜索一个关键词，
+              找回当时值得收藏的帖子、工具与开源项目。
             </p>
           </div>
           <div className="hero-stats" aria-label="知识库统计">
             <div className="stat stat-primary">
-              <strong>{allPosts.length.toLocaleString("zh-CN")}</strong>
-              <span>篇帖子</span>
+              <strong>{totalLibraryCount.toLocaleString("zh-CN")}</strong>
+              <span>条收藏</span>
+            </div>
+            <div className="stat">
+              <strong>{githubStarsMeta.count.toLocaleString("zh-CN")}</strong>
+              <span>个 GitHub 项目</span>
             </div>
             <div className="stat">
               <strong>{authors.length}</strong>
-              <span>位作者</span>
+              <span>位作者与 Owner</span>
             </div>
             <div className="stat">
               <strong>{allTopicNames.length}</strong>
               <span>个主题</span>
             </div>
             <p className="stat-note">
-              X {xPosts.length.toLocaleString("zh-CN")} 篇 · LinkedIn{" "}
-              {savedPosts.length.toLocaleString("zh-CN")} 篇。摘要来自平台当前
-              可见正文，每篇卡片都保留原帖入口。
+              GitHub {githubStarsMeta.count.toLocaleString("zh-CN")} 个 · X{" "}
+              {xPosts.length.toLocaleString("zh-CN")} 篇 · LinkedIn{" "}
+              {savedPosts.length.toLocaleString("zh-CN")} 篇。GitHub 摘要来自仓库
+              描述，活跃度依据最近推送时间计算。
+              {githubStatus === "loading" && " GitHub 索引正在载入…"}
+              {githubStatus === "error" && " GitHub 索引暂时载入失败。"}
             </p>
           </div>
         </div>
@@ -264,7 +366,7 @@ export default function Library() {
           </div>
           <p>
             当前显示 <strong>{filtered.length.toLocaleString("zh-CN")}</strong> /{" "}
-            {allPosts.length.toLocaleString("zh-CN")} 篇
+            {totalLibraryCount.toLocaleString("zh-CN")} 条
           </p>
         </header>
 
@@ -293,6 +395,37 @@ export default function Library() {
               <option>全部来源</option>
               <option>X</option>
               <option>LinkedIn</option>
+              <option>GitHub</option>
+            </select>
+          </label>
+          <label>
+            <span>语言</span>
+            <select
+              value={selectedLanguage}
+              onChange={(event) => {
+                setSelectedLanguage(event.target.value);
+                setVisible(24);
+              }}
+            >
+              <option>全部语言</option>
+              {languages.map((language) => (
+                <option key={language}>{language}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            <span>活跃度</span>
+            <select
+              value={selectedActivity}
+              onChange={(event) => {
+                setSelectedActivity(event.target.value);
+                setVisible(24);
+              }}
+            >
+              <option>全部活跃度</option>
+              {activityOptions.map((activity) => (
+                <option key={activity}>{activity}</option>
+              ))}
             </select>
           </label>
           <label>
@@ -315,11 +448,13 @@ export default function Library() {
             <select
               value={sort}
               onChange={(event) =>
-                setSort(event.target.value as "saved" | "author")
+                setSort(event.target.value as SortMode)
               }
             >
               <option value="saved">收藏顺序</option>
               <option value="author">作者 A–Z</option>
+              <option value="stars">GitHub Star 数</option>
+              <option value="activity">最近维护</option>
             </select>
           </label>
         </div>
@@ -335,7 +470,7 @@ export default function Library() {
               }}
             >
               <span>全部主题</span>
-              <b>{allPosts.length.toLocaleString("zh-CN")}</b>
+              <b>{totalLibraryCount.toLocaleString("zh-CN")}</b>
             </button>
             {allTopicNames.map((topic) => (
               <button
@@ -353,7 +488,9 @@ export default function Library() {
             {(query ||
               selectedTopic !== "全部主题" ||
               selectedAuthor !== "全部作者" ||
-              selectedPlatform !== "全部来源") && (
+              selectedPlatform !== "全部来源" ||
+              selectedLanguage !== "全部语言" ||
+              selectedActivity !== "全部活跃度") && (
               <button className="reset" onClick={resetFilters}>
                 清除筛选
               </button>
@@ -387,10 +524,25 @@ export default function Library() {
                             {post.platform ?? "LinkedIn"}
                           </span>
                           <span className="topic-label">{post.topic}</span>
+                          {post.language && (
+                            <span className="language-label">{post.language}</span>
+                          )}
+                          {post.activity && (
+                            <span className="activity-label">{post.activity}</span>
+                          )}
                           <span>{displayTime(post.time)}</span>
                         </div>
                         <h3>{titleFor(post)}</h3>
                         <p className="summary">{summary}</p>
+                        {post.platform === "GitHub" && (
+                          <p className="repo-metrics">
+                            <span>★ {(post.stars ?? 0).toLocaleString("zh-CN")}</span>
+                            <span>⑂ {(post.forks ?? 0).toLocaleString("zh-CN")}</span>
+                            {post.pushedAt && (
+                              <span>更新于 {displayTime(post.pushedAt)}</span>
+                            )}
+                          </p>
+                        )}
                         {post.text && cleanText(post.text) !== summary && (
                           <details>
                             <summary>展开正文摘录</summary>
@@ -415,7 +567,8 @@ export default function Library() {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            查看原帖 <span aria-hidden="true">↗</span>
+                            {post.platform === "GitHub" ? "查看项目" : "查看原帖"}{" "}
+                            <span aria-hidden="true">↗</span>
                           </a>
                         </footer>
                       </article>
@@ -443,7 +596,7 @@ export default function Library() {
         <div>
           <span className="brand-mark">SK</span>
           <p>
-            一个把“稍后阅读”
+            一个把“稍后阅读”和“先 Star”
             <br />
             变成“随时可用”的私人索引。
           </p>
