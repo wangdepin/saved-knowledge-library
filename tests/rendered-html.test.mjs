@@ -32,19 +32,24 @@ test("server-renders the saved-post library", async () => {
 
   const html = await response.text();
   assert.match(html, /Saved Knowledge/);
-  assert.match(html, /207/);
+  assert.match(html, /2,586/);
   assert.match(html, /知识库/);
+  assert.match(html, /LinkedIn 与 X/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
 test("ships the complete post index without starter artifacts", async () => {
-  const [posts, packageJson] = await Promise.all([
+  const [posts, xPosts, packageJson] = await Promise.all([
     readFile(new URL("../app/data/posts.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/x-posts.ts", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
-  const postCount = posts.match(/^  \{"author":/gm)?.length ?? 0;
-  assert.equal(postCount, 207);
+  const linkedInCount = posts.match(/^ {2}\{"author":/gm)?.length ?? 0;
+  const xCount = xPosts.match(/^ {4}"id": "x-/gm)?.length ?? 0;
+  assert.equal(linkedInCount, 207);
+  assert.equal(xCount, 2379);
+  assert.equal(linkedInCount + xCount, 2586);
   assert.match(packageJson, /"name": "saved-knowledge-library"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   await assert.rejects(access(new URL("../app/_sites-preview", import.meta.url)));

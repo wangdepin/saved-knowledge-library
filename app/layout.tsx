@@ -26,26 +26,26 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(origin),
-    title: "Saved Knowledge — LinkedIn 收藏知识库",
+    title: "Saved Knowledge — LinkedIn + X 收藏知识库",
     description:
-      "207 篇 LinkedIn 已保存帖子，按主题与作者整理，支持搜索与筛选。",
+      "2,586 篇 LinkedIn 与 X 已保存帖子，按来源、主题与作者整理，支持搜索与筛选。",
     openGraph: {
       title: "Saved Knowledge",
-      description: "207 ideas, one searchable library.",
+      description: "2,586 saved ideas from LinkedIn and X, one searchable library.",
       type: "website",
       images: [
         {
           url: `${origin}/og.png`,
           width: 1200,
           height: 630,
-          alt: "Saved Knowledge — 207 ideas, one searchable library",
+          alt: "Saved Knowledge — 2,586 ideas from LinkedIn and X",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: "Saved Knowledge",
-      description: "207 ideas, one searchable library.",
+      description: "2,586 saved ideas from LinkedIn and X, one searchable library.",
       images: [`${origin}/og.png`],
     },
   };
