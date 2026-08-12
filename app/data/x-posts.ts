@@ -2,6 +2,18 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+    "id": "x-2087464052880490809",
+    "author": "Zhengyang Geng",
+    "handle": "@ZhengyangGeng",
+    "profileUrl": "https://x.com/ZhengyangGeng",
+    "time": "2026-08-12T08:59:48.000Z",
+    "text": "论文讨论如何在实验成本高昂时，用尽可能少的实验识别正确的机制模型。核心思路是针对因果干预问题主动规划最有信息量的实验，以提高机制发现的数据效率。",
+    "title": "用最少实验发现正确的机制模型",
+    "source": "X / Twitter · 论文分享",
+    "platform": "X",
+    "url": "https://x.com/ZhengyangGeng/status/2087464052880490809"
+  },
+  {
     "id": "x-1978267678134480968",
     "author": "Arpit Gupta",
     "handle": "@arpitrage",
