@@ -2,6 +2,66 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+    "id": "x-1978267678134480968",
+    "author": "Arpit Gupta",
+    "handle": "@arpitrage",
+    "profileUrl": "https://x.com/arpitrage",
+    "time": "2025-10-15T01:12:23.000Z",
+    "text": "These results suggest that getting a PhD causally worsens mental health, or at least receiving psychiatric medicines. The reversal post PhD degree is particularly convincing, while the upward trend among the highly educated control group is also intriguing.",
+    "title": "Does getting a PhD worsen mental health?",
+    "source": "X / Twitter",
+    "platform": "X",
+    "url": "https://x.com/arpitrage/status/1978267678134480968"
+  },
+  {
+    "id": "x-2087256739267633275",
+    "author": "TS Lim",
+    "handle": "@clipsoflogic",
+    "profileUrl": "https://x.com/clipsoflogic",
+    "time": "2026-08-11T19:16:00.000Z",
+    "text": "How I use LLMs to learn complex topics. Learning new things is one of the top use cases for large language models.",
+    "title": "How I use LLMs to learn complex topics",
+    "source": "X / Twitter · laurentiugabriel.github.io",
+    "platform": "X",
+    "url": "https://x.com/clipsoflogic/status/2087256739267633275"
+  },
+  {
+    "id": "x-2086582758437015606",
+    "author": "Sean Florez",
+    "handle": "@seanf1orez",
+    "profileUrl": "https://x.com/seanf1orez",
+    "time": "2026-08-09T22:37:51.000Z",
+    "text": "An open-source, modular Python foundation for reproducible computational and autonomous laboratories: self-driving labs for all.",
+    "title": "OpenSDL — open self-driving laboratories",
+    "source": "X / Twitter · github.com/fl-sean03/OpenSDL",
+    "platform": "X",
+    "url": "https://x.com/seanf1orez/status/2086582758437015606"
+  },
+  {
+    "id": "x-2086754845218726027",
+    "author": "Mark Zuckerberg",
+    "handle": "@finkd",
+    "profileUrl": "https://x.com/finkd",
+    "time": "2026-08-10T10:01:39.000Z",
+    "text": "I believe everyone should have access to superintelligence, and I wrote a long piece about Meta's philosophy and values for building a positive future for everyone.",
+    "title": "Meta’s philosophy for broadly accessible superintelligence",
+    "source": "X / Twitter · meta.com",
+    "platform": "X",
+    "url": "https://x.com/finkd/status/2086754845218726027"
+  },
+  {
+    "id": "x-2087091575239418006",
+    "author": "xxchan",
+    "handle": "@xiaoxxchan",
+    "profileUrl": "https://x.com/xiaoxxchan",
+    "time": "2026-08-11T08:19:42.000Z",
+    "text": "最近琢磨了一下穿搭，感觉变帅其实挺简单。入门任何领域最重要的是学会这个领域的语言、建立基本词汇表；在穿搭上，知道如何描述风格并了解品牌名称，就算基本入门了。",
+    "title": "普通男生怎么快速把穿搭提上来",
+    "source": "X / Twitter · artifact-share.botiverse.dev",
+    "platform": "X",
+    "url": "https://x.com/xiaoxxchan/status/2087091575239418006"
+  },
+  {
     "id": "x-2087032923253825977",
     "author": "owl@owl_posting·9小时",
     "handle": "",
