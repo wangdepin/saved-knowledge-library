@@ -2,6 +2,54 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+    "id": "x-2089500174070452712",
+    "author": "Califano Lab",
+    "handle": "@califano_lab",
+    "profileUrl": "https://x.com/califano_lab",
+    "time": "2026-08-17T23:50:37.000Z",
+    "text": "Califano Lab 发布 Cell 观点论文，系统提出生成式 AI 应用于细胞生物学时需要解决的十五项挑战，为虚拟细胞、生成模型与实验验证之间的研究路线提供评估框架。",
+    "title": "生成式 AI 应用于细胞生物学的十五项挑战",
+    "source": "X / Twitter · cell.com",
+    "platform": "X",
+    "url": "https://x.com/califano_lab/status/2089500174070452712"
+  },
+  {
+    "id": "x-2089459409818955785",
+    "author": "Rachel Thomas",
+    "handle": "@math_rachel",
+    "profileUrl": "https://x.com/math_rachel",
+    "time": "2026-08-17T21:08:38.000Z",
+    "text": "Rachel Thomas 在承认 AI 对写作、教育、开源生态与环境造成现实伤害的同时，解释自己为何重返这一领域；她希望探索不同于少数大型 AI 公司目标、更具公共价值的技术愿景。",
+    "title": "朋友们都讨厌 AI，我却加入了一家 AI 创业公司",
+    "source": "X / Twitter · fast.ai",
+    "platform": "X",
+    "url": "https://x.com/math_rachel/status/2089459409818955785"
+  },
+  {
+    "id": "x-2084779496549548323",
+    "author": "Aaron Defazio",
+    "handle": "@aaron_defazio",
+    "profileUrl": "https://x.com/aaron_defazio",
+    "time": "2026-08-04T23:12:19.000Z",
+    "text": "作者认为 AI 理论研究正在跨越效率阈值：理论构建速度大幅提升后，理论不再只能事后解释实验结果，而有机会更早提出可检验方向并主动驱动模型研究。",
+    "title": "理论驱动 AI 研究的新阶段",
+    "source": "X / Twitter · A New Era of Theory-Driven AI Research",
+    "platform": "X",
+    "url": "https://x.com/aaron_defazio/status/2084779496549548323"
+  },
+  {
+    "id": "x-2089401825891848637",
+    "author": "@levelsio",
+    "handle": "@levelsio",
+    "profileUrl": "https://x.com/levelsio",
+    "time": "2026-08-17T17:19:49.000Z",
+    "text": "围绕一位交易者投入六年才开始盈利的坦率分享，帖子指出评估主动交易不能只看当前盈亏，还应计入同期投资标普 500 的机会成本；专业能力的学习周期与基准收益需要同时比较。",
+    "title": "交易盈利之外还要计算机会成本",
+    "source": "X / Twitter · 投资与交易",
+    "platform": "X",
+    "url": "https://x.com/levelsio/status/2089401825891848637"
+  },
+  {
     "id": "x-2089236794105868396",
     "author": "Shawn Yin",
     "handle": "@shawnyinmr",
