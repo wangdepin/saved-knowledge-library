@@ -2,6 +2,102 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+    "id": "x-2090557846102643120",
+    "author": "Xudong Han",
+    "handle": "@Xudong07452910",
+    "profileUrl": "https://x.com/Xudong07452910",
+    "time": "2026-08-20T21:53:25.000Z",
+    "text": "作者推荐一篇反思 AI Scientist 的文章：研究不应只靠批量生成假设再由 Judge 选优，而应像模糊测试一样从每次失败中识别理解错误和未探索区域。真正的科学进步来自持续修正认知，而不只是赢得单次评测。",
+    "title": "AI Scientist 应从失败中探索，而不只是追求胜出",
+    "source": "X / Twitter · AI Scientist",
+    "platform": "X",
+    "url": "https://x.com/Xudong07452910/status/2090557846102643120"
+  },
+  {
+    "id": "x-2086189428012093655",
+    "author": "Mario Zechner",
+    "handle": "@badlogicgames",
+    "profileUrl": "https://x.com/badlogicgames",
+    "time": "2026-08-08T20:34:53.000Z",
+    "text": "文章反驳“代码从来不是难点”这一流行说法，强调程序员的价值不仅在输入代码，还包括把模糊需求变成可靠系统、理解约束、调试复杂交互并长期维护软件。AI 能加速实现，却不会自动消除这些工程难题。",
+    "title": "“代码从来不是难点”低估了程序员的工作",
+    "source": "blog.senko.net · 软件工程",
+    "platform": "X",
+    "url": "https://x.com/badlogicgames/status/2086189428012093655"
+  },
+  {
+    "id": "x-2090651396324626868",
+    "author": "James Fang",
+    "handle": "@polymath_james",
+    "profileUrl": "https://x.com/polymath_james",
+    "time": "2026-08-21T04:05:09.000Z",
+    "text": "作者回顾 17 岁申请 26 所美国大学、被 20 所拒绝后进入 UIUC 的经历，并思考如何加速完成课程和主动争取成长。核心信息是不要让缺乏紧迫感浪费潜力，应更主动地使用教育资源并推进长期目标。",
+    "title": "用紧迫感主动加速大学学习与个人成长",
+    "source": "X / Twitter · 教育与成长",
+    "platform": "X",
+    "url": "https://x.com/polymath_james/status/2090651396324626868"
+  },
+  {
+    "id": "x-2090103999588421850",
+    "author": "Justin Skycak",
+    "handle": "@justinskycak",
+    "profileUrl": "https://x.com/justinskycak",
+    "time": "2026-08-19T15:50:00.000Z",
+    "text": "作者用“缺乏紧迫感正在浪费你的潜力”概括给年轻人的职业建议：持续磨炼技术、写作与协作能力，投入与价值观一致的使命，并主动承担规模、复杂度和责任不断提升的项目。",
+    "title": "职业成长需要技能、使命与紧迫感",
+    "source": "X / Twitter · 职业发展",
+    "platform": "X",
+    "url": "https://x.com/justinskycak/status/2090103999588421850"
+  },
+  {
+    "id": "x-2090549027435954617",
+    "author": "yibie",
+    "handle": "@yibie",
+    "profileUrl": "https://x.com/yibie",
+    "time": "2026-08-20T21:18:23.000Z",
+    "text": "Raj Dandekar 用 252 美元租用一张 H200，从零预训练迷你版 Kimi K3，并把官方代码无法直接训练时遇到的问题逐项记录下来。配套免费电子书以大量手绘图和短章节讲解数据、训练流程、故障排查与成本控制。",
+    "title": "用 252 美元从零预训练迷你版 Kimi K3",
+    "source": "books.vizuara.ai · 大模型训练",
+    "platform": "X",
+    "url": "https://x.com/yibie/status/2090549027435954617"
+  },
+  {
+    "id": "x-2090573531188719952",
+    "author": "Santiago R Santos",
+    "handle": "@santiagoroel",
+    "profileUrl": "https://x.com/santiagoroel",
+    "time": "2026-08-20T22:55:45.000Z",
+    "text": "作者推荐 Nabeel Qureshi 的《How To Understand Things》，文章围绕如何真正理解事物展开：通过持续追问、重建概念之间的联系，并检验自己能否用清晰语言解释，把表面熟悉转化为可迁移的深层理解。",
+    "title": "How To Understand Things：把熟悉变成真正理解",
+    "source": "nabeelqu.substack.com · 学习方法",
+    "platform": "X",
+    "url": "https://x.com/santiagoroel/status/2090573531188719952"
+  },
+  {
+    "id": "x-2090557258791092316",
+    "author": "Ben Somers",
+    "handle": "@ben_m_somers",
+    "profileUrl": "https://x.com/ben_m_somers",
+    "time": "2026-08-20T21:51:05.000Z",
+    "text": "作者列举多款能自然教授科学思维的游戏：Oxygen Not Included 涉及热力学，Poly Bridge 涉及张力、载荷、材料和三角学。好的教育游戏可以让玩家在解决真实约束时记住符合物理或化学规律的参数与相互作用。",
+    "title": "电子游戏可以成为物理与科学思维课堂",
+    "source": "X / Twitter · 科学教育",
+    "platform": "X",
+    "url": "https://x.com/ben_m_somers/status/2090557258791092316"
+  },
+  {
+    "id": "x-2081759854939492829",
+    "author": "Jason Scharf",
+    "handle": "@Jason_A_Scharf",
+    "profileUrl": "https://x.com/Jason_A_Scharf",
+    "time": "2026-07-27T15:13:21.000Z",
+    "text": "一位 Alpha School 家长结合五、七年级孩子的就读经历和对创办者的访谈，回应外界对加速学习模式的讨论。他既认可个性化与效率优势，也强调家长视角下的实际挑战，为评估新型学校提供更平衡的证据。",
+    "title": "Alpha School 家长谈加速学习的优势与挑战",
+    "source": "youtube.com · 教育创新",
+    "platform": "X",
+    "url": "https://x.com/Jason_A_Scharf/status/2081759854939492829"
+  },
+  {
     "id": "x-2090108661851144301",
     "author": "Anshul Kundaje",
     "handle": "@anshulkundaje",
