@@ -1,10 +1,10 @@
 export const githubStarsMeta = {
   "count": 3278,
-  "syncedAt": "2026-08-21T19:16:38.786Z",
+  "syncedAt": "2026-08-22T19:05:06.491Z",
   "activityCounts": {
-    "活跃": 1121,
-    "近期维护": 599,
-    "低频维护": 1451,
+    "活跃": 1119,
+    "近期维护": 598,
+    "低频维护": 1454,
     "已归档": 107
   },
   "topLanguages": [
