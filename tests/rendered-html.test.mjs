@@ -32,7 +32,7 @@ test("server-renders the saved-post library", async () => {
 
   const html = await response.text();
   assert.match(html, /Saved Knowledge/);
-  assert.match(html, /5,967/);
+  assert.match(html, /6,016/);
   assert.match(html, /知识库/);
   assert.match(html, /GitHub/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
@@ -47,18 +47,18 @@ test("ships the complete saved-content indexes without private repositories", as
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
-  const linkedInCount = posts.match(/^ {2}\{"author":/gm)?.length ?? 0;
-  const xCount = xPosts.match(/^ {4}"id": "x-/gm)?.length ?? 0;
+  const linkedInCount = posts.match(/\{"author"\s*:/g)?.length ?? 0;
+  const xCount = xPosts.match(/"id"\s*:\s*"x-/g)?.length ?? 0;
   const githubStars = JSON.parse(githubStarsJson);
-  assert.equal(linkedInCount, 242);
-  assert.equal(xCount, 2447);
-  assert.equal(githubStars.length, 3278);
-  assert.equal(linkedInCount + xCount + githubStars.length, 5967);
+  assert.equal(linkedInCount, 251);
+  assert.equal(xCount, 2479);
+  assert.equal(githubStars.length, 3286);
+  assert.equal(linkedInCount + xCount + githubStars.length, 6016);
   assert.ok(githubStars.every((repository) => repository.platform === "GitHub"));
   assert.ok(githubStars.every((repository) => repository.url.startsWith("https://github.com/")));
   assert.ok(githubStars.every((repository) => repository.language && repository.activity));
   assert.ok(githubStars.every((repository) => !("private" in repository)));
-  assert.match(githubMeta, /["']?count["']?: 3278/);
+  assert.match(githubMeta, /["']?count["']?: 3286/);
   assert.match(packageJson, /"name": "saved-knowledge-library"/);
   assert.match(packageJson, /"sync:github-stars"/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
