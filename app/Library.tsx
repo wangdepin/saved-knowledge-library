@@ -229,18 +229,23 @@ export default function Library() {
 
   useEffect(() => {
     const savedLesson = Number(localStorage.getItem("breaststroke-current") ?? 0);
-    if (Number.isInteger(savedLesson) && breaststrokeLessons[savedLesson]) {
-      setSelectedLesson(savedLesson);
-    }
+    let savedCompleted: number[] = [];
 
     try {
-      const savedCompleted = JSON.parse(
+      const parsedCompleted = JSON.parse(
         localStorage.getItem("breaststroke-completed") ?? "[]",
       );
-      if (Array.isArray(savedCompleted)) setCompletedLessons(savedCompleted);
+      if (Array.isArray(parsedCompleted)) savedCompleted = parsedCompleted;
     } catch {
-      setCompletedLessons([]);
+      // Ignore malformed progress saved by an older browser session.
     }
+
+    queueMicrotask(() => {
+      if (Number.isInteger(savedLesson) && breaststrokeLessons[savedLesson]) {
+        setSelectedLesson(savedLesson);
+      }
+      setCompletedLessons(savedCompleted);
+    });
   }, []);
 
   useEffect(() => {
@@ -467,6 +472,7 @@ export default function Library() {
 
         <div className="course-layout">
           <div className="course-player">
+            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <video
               key={currentLesson.file}
               ref={videoRef}
