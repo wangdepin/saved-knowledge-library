@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { githubStarsMeta } from "./data/github-stars-meta";
 import { savedPosts, type SavedPost } from "./data/posts";
 import { xPosts } from "./data/x-posts";
@@ -77,6 +77,54 @@ const socialPosts: SavedPost[] = [...xPosts, ...linkedInPosts];
 const totalLibraryCount = socialPosts.length + githubStarsMeta.count;
 const activityOptions = ["活跃", "近期维护", "低频维护", "已归档"] as const;
 
+const breaststrokeLessons = [
+  {
+    title: "基本游泳动作",
+    duration: "2:47",
+    file: "videos/breaststroke/01-basic-movements.mp4",
+  },
+  {
+    title: "如何改善手臂划水动作",
+    duration: "1:51",
+    file: "videos/breaststroke/02-arm-stroke.mp4",
+  },
+  {
+    title: "如何改善腿部蹬水动作",
+    duration: "2:23",
+    file: "videos/breaststroke/03-leg-kick.mp4",
+  },
+  {
+    title: "手臂和腿部的协调运动",
+    duration: "1:49",
+    file: "videos/breaststroke/04-arm-leg-coordination.mp4",
+  },
+  {
+    title: "改善肩部和头部的入水动作",
+    duration: "2:01",
+    file: "videos/breaststroke/05-shoulder-head-entry.mp4",
+  },
+  {
+    title: "转身",
+    duration: "2:10",
+    file: "videos/breaststroke/06-turn.mp4",
+  },
+  {
+    title: "手臂划水动作练习 1",
+    duration: "1:35",
+    file: "videos/breaststroke/07-arm-drill-1.mp4",
+  },
+  {
+    title: "腿部动作",
+    duration: "1:58",
+    file: "videos/breaststroke/08-leg-movements.mp4",
+  },
+  {
+    title: "手臂划水动作练习 2",
+    duration: "1:26",
+    file: "videos/breaststroke/09-arm-drill-2.mp4",
+  },
+] as const;
+
 type SortMode = "saved" | "author" | "stars" | "activity";
 
 function topicFor(post: SavedPost) {
@@ -140,6 +188,8 @@ function displayTime(value: string) {
 }
 
 export default function Library() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const lastSavedSecond = useRef(0);
   const [githubStars, setGithubStars] = useState<SavedPost[]>([]);
   const [githubStatus, setGithubStatus] = useState<
     "loading" | "ready" | "error"
@@ -152,6 +202,8 @@ export default function Library() {
   const [selectedActivity, setSelectedActivity] = useState("全部活跃度");
   const [sort, setSort] = useState<SortMode>("saved");
   const [visible, setVisible] = useState(24);
+  const [selectedLesson, setSelectedLesson] = useState(0);
+  const [completedLessons, setCompletedLessons] = useState<number[]>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -174,6 +226,43 @@ export default function Library() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    const savedLesson = Number(localStorage.getItem("breaststroke-current") ?? 0);
+    if (Number.isInteger(savedLesson) && breaststrokeLessons[savedLesson]) {
+      setSelectedLesson(savedLesson);
+    }
+
+    try {
+      const savedCompleted = JSON.parse(
+        localStorage.getItem("breaststroke-completed") ?? "[]",
+      );
+      if (Array.isArray(savedCompleted)) setCompletedLessons(savedCompleted);
+    } catch {
+      setCompletedLessons([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("breaststroke-current", String(selectedLesson));
+    lastSavedSecond.current = 0;
+  }, [selectedLesson]);
+
+  const currentLesson = breaststrokeLessons[selectedLesson];
+
+  const finishLesson = () => {
+    setCompletedLessons((lessons) => {
+      const next = lessons.includes(selectedLesson)
+        ? lessons
+        : [...lessons, selectedLesson].sort((a, b) => a - b);
+      localStorage.setItem("breaststroke-completed", JSON.stringify(next));
+      return next;
+    });
+    localStorage.removeItem(`breaststroke-time-${selectedLesson}`);
+    if (selectedLesson < breaststrokeLessons.length - 1) {
+      setSelectedLesson((lesson) => lesson + 1);
+    }
+  };
 
   const enriched = useMemo(
     () =>
@@ -291,9 +380,14 @@ export default function Library() {
             <span className="brand-mark">SK</span>
             <span>Saved Knowledge</span>
           </a>
-          <a className="top-link" href="#library">
-            浏览知识库 <span aria-hidden="true">↓</span>
-          </a>
+          <div className="top-links">
+            <a className="top-link" href="#breaststroke">
+              学蛙泳 <span aria-hidden="true">▶</span>
+            </a>
+            <a className="top-link" href="#library">
+              浏览知识库 <span aria-hidden="true">↓</span>
+            </a>
+          </div>
         </nav>
 
         <div className="hero-grid" id="top">
@@ -356,6 +450,96 @@ export default function Library() {
             </button>
           ))}
         </div>
+      </section>
+
+      <section className="course-shell" id="breaststroke">
+        <header className="course-header">
+          <div>
+            <p className="section-kicker">SWIM COURSE · 9 LESSONS</p>
+            <h2>从零开始学蛙泳</h2>
+          </div>
+          <p>
+            中文讲解 · 共 18 分钟
+            <br />
+            视频已存入本站，无需打开 YouTube
+          </p>
+        </header>
+
+        <div className="course-layout">
+          <div className="course-player">
+            <video
+              key={currentLesson.file}
+              ref={videoRef}
+              controls
+              playsInline
+              preload="metadata"
+              onLoadedMetadata={(event) => {
+                const savedTime = Number(
+                  localStorage.getItem(`breaststroke-time-${selectedLesson}`) ??
+                    0,
+                );
+                if (savedTime > 0 && savedTime < event.currentTarget.duration - 5) {
+                  event.currentTarget.currentTime = savedTime;
+                }
+              }}
+              onTimeUpdate={(event) => {
+                const second = Math.floor(event.currentTarget.currentTime);
+                if (second - lastSavedSecond.current >= 5) {
+                  localStorage.setItem(
+                    `breaststroke-time-${selectedLesson}`,
+                    String(second),
+                  );
+                  lastSavedSecond.current = second;
+                }
+              }}
+              onEnded={finishLesson}
+            >
+              <source src={currentLesson.file} type="video/mp4" />
+              你的浏览器暂不支持 HTML5 视频播放。
+            </video>
+            <div className="now-playing">
+              <span>{String(selectedLesson + 1).padStart(2, "0")}</span>
+              <div>
+                <p>正在学习</p>
+                <h3>{currentLesson.title}</h3>
+              </div>
+              <b>{currentLesson.duration}</b>
+            </div>
+          </div>
+
+          <aside className="lesson-list" aria-label="蛙泳课程目录">
+            <p>按顺序学习</p>
+            {breaststrokeLessons.map((lesson, index) => (
+              <button
+                key={lesson.file}
+                className={selectedLesson === index ? "active" : ""}
+                onClick={() => setSelectedLesson(index)}
+              >
+                <span className="lesson-number">
+                  {completedLessons.includes(index)
+                    ? "✓"
+                    : String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="lesson-title">{lesson.title}</span>
+                <span className="lesson-duration">{lesson.duration}</span>
+              </button>
+            ))}
+          </aside>
+        </div>
+
+        <footer className="course-credit">
+          <p>
+            课程来源：Sikana 公益教育项目，与迪卡侬及游泳教练
+            奥德利亚·布耶、皮耶里克·勒弗洛赫合作拍摄。
+          </p>
+          <a
+            href="https://www.youtube.com/watch?v=FbGeBzFGsNA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            查看原始课程 ↗
+          </a>
+        </footer>
       </section>
 
       <section className="library-shell" id="library">
