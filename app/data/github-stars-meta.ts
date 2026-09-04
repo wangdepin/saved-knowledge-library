@@ -1,20 +1,20 @@
 export const githubStarsMeta = {
-  "count": 3322,
-  "syncedAt": "2026-09-03T19:33:47.337Z",
+  "count": 3324,
+  "syncedAt": "2026-09-04T19:07:47.277Z",
   "activityCounts": {
-    "活跃": 1134,
-    "近期维护": 616,
-    "低频维护": 1463,
+    "活跃": 1133,
+    "近期维护": 618,
+    "低频维护": 1464,
     "已归档": 109
   },
   "topLanguages": [
     {
       "language": "Python",
-      "count": 957
+      "count": 959
     },
     {
       "language": "未标注",
-      "count": 511
+      "count": 510
     },
     {
       "language": "Jupyter Notebook",
@@ -30,7 +30,7 @@ export const githubStarsMeta = {
     },
     {
       "language": "JavaScript",
-      "count": 182
+      "count": 183
     },
     {
       "language": "HTML",
