@@ -4,13 +4,13 @@ import test from "node:test";
 
 const templateRoot = new URL("../", import.meta.url);
 
-async function render() {
+async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${pathname}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -35,6 +35,7 @@ test("server-renders the saved-post library", async () => {
   assert.match(html, /6,195/);
   assert.match(html, /知识库/);
   assert.match(html, /GitHub/);
+  assert.doesNotMatch(html, /从零开始学蛙泳/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
