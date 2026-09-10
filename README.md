@@ -1,7 +1,7 @@
 # Saved Knowledge
 
-A searchable personal library built from 6,207 saved items: 266 LinkedIn posts,
-2,606 X posts, and 3,335 public GitHub starred repositories. The site organizes
+A searchable personal library built from 6,273 saved items: 270 LinkedIn posts,
+2,667 X posts, and 3,336 public GitHub starred repositories. The site organizes
 them by source, topic, author or owner, programming language, and activity, and
 keeps a direct link to every original item.
 
@@ -39,6 +39,18 @@ npm run sync:github-stars
 The sync writes public repository data to `public/data/github-stars.json` and
 updates the lightweight count metadata used during server rendering. Private
 repositories are excluded from the public export.
+
+## LinkedIn and X updates
+
+Use the Browser skill to check existing signed-in sessions before declaring a
+source unavailable. LinkedIn saved posts are under
+`https://www.linkedin.com/my-items/saved-posts/`; X bookmarks are under
+`https://x.com/i/bookmarks`. Read the saved-list UI, collect new records until
+reaching an overlapping run of existing IDs, and deduplicate by platform ID.
+Preserve older records and their summaries. Summarize only visible text and
+label truncated or insufficient excerpts honestly. Never inspect cookies or
+session stores. Update source counts, page metadata, and test expectations
+after import, then validate both builds before publishing.
 
 ## Deployment
 
