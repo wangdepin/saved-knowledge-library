@@ -20,6 +20,8 @@ export type SavedPost = {
 };
 
 export const savedPosts: SavedPost[] = [
+  {"author":"Euxhen Hasanaj","id":"7505103503447441408","profileUrl":"https://www.linkedin.com/in/ACoAAB_IRhEB0gPFYLrCkumHZq5mvmqghErX7D4","source":"euxhenh.com · 单细胞实验","text":"作者讨论 scRNA-seq 从样本选择、组织处理到测序与计数各环节可能引入的信号损失、噪声和可复现性问题，提醒计算生物学研究者理解计数矩阵形成之前的数据来源。","time":"16h","title":"scRNA-seq 计数矩阵形成之前可能出什么问题","url":"https://www.linkedin.com/feed/update/urn:li:activity:7505103503447441408"},
+
   {"author":"David McCoy, MSc, PhD","id":"7502918150083239936","profileUrl":"https://www.linkedin.com/in/ACoAABSX7icBbBvc3ZkvDTYr-nvcDK024tqH0Yo","source":"brettcodes.com","text":"David McCoy 分享减少 AI 依赖的反思，认为练习编程让自己意识到技能生疏，并怀念慢下来学习、探索数学与代码的过程。","time":"2d","title":"反思 AI 依赖与编程能力退化","url":"https://www.linkedin.com/feed/update/urn:li:activity:7502918150083239936"},
   {"author":"Rhyannon Rodriguez","id":"7501335836995801089","profileUrl":"https://www.linkedin.com/in/ACoAACZk9NABGyrR_JZ6Z1dziC3l6AvQXWG39es","source":"vale.sh","text":"Rhyannon Rodriguez 询问使用 Vale Voices 改善空泛写作的经验，并分享把 AI 写作技能转化为 Vale 规则的文章。","time":"6d","title":"Vale Voices：将写作规范转为检查规则","url":"https://www.linkedin.com/feed/update/urn:li:activity:7501335836995801089"},
   {"author":"Greg Wilson","id":"7502720296878129152","profileUrl":"https://www.linkedin.com/in/ACoAABii8r4B1ZKic3FGREl6YhymJ9QgASUbv1Q","source":"third-bit.com","text":"Greg Wilson 更新科研软件项目管理工作坊练习，并为十月授课加入幻灯片。材料以知识共享许可公开，欢迎反馈。","time":"2d","title":"科研软件项目管理工作坊更新","url":"https://www.linkedin.com/feed/update/urn:li:activity:7502720296878129152"},
