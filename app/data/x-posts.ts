@@ -1,6 +1,67 @@
 import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
+{
+  "id": "x-2099656946873958837",
+  "author": "Xudong Han",
+  "handle": "@Xudong07452910",
+  "profileUrl": "https://x.com/Xudong07452910",
+  "time": "2026-09-15T00:30:00.000Z",
+  "text": "Xudong Han 推荐 Nathan Lambert 整理的 Open-Source AI & Open Models Reading List，涵盖开放模型发展的文章、报告与数据源，帮助理解 DeepSeek、Qwen、Kimi、GLM 等模型的背景。摘要依据书签列表可见片段。",
+  "title": "开放模型阅读清单：50 多篇文章与报告",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/Xudong07452910/status/2099656946873958837"
+},
+{
+  "id": "x-2099789666035577274",
+  "author": "momoai沫沫🫧",
+  "handle": "@momoai_daily",
+  "profileUrl": "https://x.com/momoai_daily",
+  "time": "2026-09-15T09:17:23.000Z",
+  "text": "作者从自己的语言学习观点出发，比较中文和英文的阅读体验，主张练习英文阅读时重视读音与默读。原帖在书签列表中被截断，未包含完整论述。",
+  "title": "英语阅读练习与默读体验",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/momoai_daily/status/2099789666035577274"
+},
+{
+  "id": "x-2099487121593577921",
+  "author": "Arjun Raj",
+  "handle": "@arjunrajlab",
+  "profileUrl": "https://x.com/arjunrajlab",
+  "time": "2026-09-14T13:15:11.000Z",
+  "text": "Arjun Raj 建议将每页幻灯片的标题写成包含主语、动词和宾语的完整句子，以帮助每页明确表达一个观点，避免没有重点或同时塞入多个重点。",
+  "title": "用完整句子写幻灯片标题",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/arjunrajlab/status/2099487121593577921"
+},
+{
+  "id": "x-2098582265190351334",
+  "author": "Michael 英泉 Eisen",
+  "handle": "@mbeisen",
+  "profileUrl": "https://x.com/mbeisen",
+  "time": "2026-09-12T01:19:36.000Z",
+  "text": "Michael Eisen 分享文章《A Severe Misalignment of AI and Cancer Biology》。书签列表仅显示标题及截断的导语，涉及对大语言模型癌症研究能力的讨论；完整观点需阅读原文。",
+  "title": "AI 与癌症生物学的错位",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/mbeisen/status/2098582265190351334"
+},
+{
+  "id": "x-2099571548377981087",
+  "author": "Alex Hernandez",
+  "handle": "@Alexher__",
+  "profileUrl": "https://x.com/Alexher__",
+  "time": "2026-09-14T18:50:39.000Z",
+  "text": "Alex Hernandez 分享自己用 Claude 制作的个人应用，称其免费、无广告、无付费内容，并已有约 20 位用户。列表中的文字和图片预览未清楚说明具体功能。",
+  "title": "使用 Claude 制作免费个人应用",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/Alexher__/status/2099571548377981087"
+},
+
   {"id":"x-2099502187667673163","author":"Daniel Litt","handle":"@littmath","profileUrl":"https://x.com/littmath","time":"2026-09-14T14:15:03.000Z","text":"Daniel Litt 分享《A beginning for mathematics》，讨论数学研究与职业共同体如何应对能力不断提升的 AI 系统，并提供文章和反馈入口。","title":"数学职业如何适应高能力 AI 系统","source":"X / Twitter · 收藏摘要","platform":"X","url":"https://x.com/littmath/status/2099502187667673163"},
   {"id":"x-2099259095580594197","author":"Jason Locasale","handle":"@LocasaleLab","profileUrl":"https://x.com/LocasaleLab","time":"2026-09-13T22:09:05.000Z","text":"Jason Locasale 分享其 Substack 新文章，邀请读者关注科学与科研改革话题。列表只提供简短介绍和文章链接。","title":"关于 AI、学术逻辑与科研改革的文章","source":"X / Twitter · 收藏摘要","platform":"X","url":"https://x.com/LocasaleLab/status/2099259095580594197"},
   {"id":"x-2099103644495097893","author":"jae","handle":"@namuggie","profileUrl":"https://x.com/namuggie","time":"2026-09-13T11:51:22.000Z","text":"作者展示一个包含英语短视频、词汇游戏、听写、跟读及 TOEIC、IELTS 模拟测试的网站，并称多数功能免费。列表未明确标出网站名称，摘要依据页面译文。","title":"结合听写、跟读与模拟测试的英语学习网站","source":"X / Twitter · 收藏摘要","platform":"X","url":"https://x.com/namuggie/status/2099103644495097893"},
