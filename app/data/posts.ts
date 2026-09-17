@@ -20,7 +20,13 @@ export type SavedPost = {
 };
 
 export const savedPosts: SavedPost[] = [
-  {"author":"Euxhen Hasanaj","id":"7505103503447441408","profileUrl":"https://www.linkedin.com/in/ACoAAB_IRhEB0gPFYLrCkumHZq5mvmqghErX7D4","source":"euxhenh.com · 单细胞实验","text":"作者讨论 scRNA-seq 从样本选择、组织处理到测序与计数各环节可能引入的信号损失、噪声和可复现性问题，提醒计算生物学研究者理解计数矩阵形成之前的数据来源。","time":"16h","title":"scRNA-seq 计数矩阵形成之前可能出什么问题","url":"https://www.linkedin.com/feed/update/urn:li:activity:7505103503447441408"},
+  {"author":"OpenTeams","id":"7506065449806200833","profileUrl":"https://www.linkedin.com/company/openteams/","source":"openteams.com · AI 辅助编程","text":"OpenTeams 的 Johnny Bouder 指出，AI 辅助编程的风险不仅在于模型可能犯错，还在于快速生成的流程容易让团队忽略原有的质量检查与工程审阅，强调在使用 AI 工具时仍需保持审慎的质量控制与工程判断。","time":"1d","title":"慢下来：引导 AI 编写与交付高质量代码的思考","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506065449806200833"},
+
+  {"author":"Abdallah Meknas","id":"7506007145348382721","profileUrl":"https://www.linkedin.com/in/ACoAACPKuJcBbtHSEn5Mgv67uk8TD_hWjcPQxI8","source":"LinkedIn · 生物信息与 AI 验证","text":"Sanofi 生物信息工程师 Abdallah Meknas 总结了 LLM 编写代码时不会抛出报错但会导致静默错误的 7 种模式，包括引用不匹配、静默修改配置、隐含生物学假设、上下文权重衰减、API 版本默认值冲突、静默丢失数据及为通过测试篡改预期值。","time":"1d","title":"AI 生成代码不报错却悄然出错的七种模式","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506007145348382721"},
+
+  {"author":"Andreas Raue","id":"7505321564356370432","profileUrl":"https://www.linkedin.com/in/ACoAAAhDXUcB-xJpPA52cRkDFIq10CGq0BY6SE4","source":"biorxiv.org · 单细胞与转录组","text":"奥格斯堡大学 Andreas Raue 团队介绍预印本成果 bulk2scDiff，利用条件扩散模型学习临床大队列 bulk RNA-seq 与高分辨率 scRNA-seq 之间的映射关系，从样本总体转录组生成生物学上连贯的单细胞细胞群表达谱。","time":"3d","title":"bulk2scDiff：利用条件扩散模型从 bulk 转录组生成单细胞表达谱","url":"https://www.linkedin.com/feed/update/urn:li:activity:7505321564356370432"},
+
+{"author":"Euxhen Hasanaj","id":"7505103503447441408","profileUrl":"https://www.linkedin.com/in/ACoAAB_IRhEB0gPFYLrCkumHZq5mvmqghErX7D4","source":"euxhenh.com · 单细胞实验","text":"作者讨论 scRNA-seq 从样本选择、组织处理到测序与计数各环节可能引入的信号损失、噪声和可复现性问题，提醒计算生物学研究者理解计数矩阵形成之前的数据来源。","time":"16h","title":"scRNA-seq 计数矩阵形成之前可能出什么问题","url":"https://www.linkedin.com/feed/update/urn:li:activity:7505103503447441408"},
 
   {"author":"David McCoy, MSc, PhD","id":"7502918150083239936","profileUrl":"https://www.linkedin.com/in/ACoAABSX7icBbBvc3ZkvDTYr-nvcDK024tqH0Yo","source":"brettcodes.com","text":"David McCoy 分享减少 AI 依赖的反思，认为练习编程让自己意识到技能生疏，并怀念慢下来学习、探索数学与代码的过程。","time":"2d","title":"反思 AI 依赖与编程能力退化","url":"https://www.linkedin.com/feed/update/urn:li:activity:7502918150083239936"},
   {"author":"Rhyannon Rodriguez","id":"7501335836995801089","profileUrl":"https://www.linkedin.com/in/ACoAACZk9NABGyrR_JZ6Z1dziC3l6AvQXWG39es","source":"vale.sh","text":"Rhyannon Rodriguez 询问使用 Vale Voices 改善空泛写作的经验，并分享把 AI 写作技能转化为 Vale 规则的文章。","time":"6d","title":"Vale Voices：将写作规范转为检查规则","url":"https://www.linkedin.com/feed/update/urn:li:activity:7501335836995801089"},
