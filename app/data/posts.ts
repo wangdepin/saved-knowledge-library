@@ -20,7 +20,9 @@ export type SavedPost = {
 };
 
 export const savedPosts: SavedPost[] = [
-  {"author":"OpenTeams","id":"7506065449806200833","profileUrl":"https://www.linkedin.com/company/openteams/","source":"openteams.com · AI 辅助编程","text":"OpenTeams 的 Johnny Bouder 指出，AI 辅助编程的风险不仅在于模型可能犯错，还在于快速生成的流程容易让团队忽略原有的质量检查与工程审阅，强调在使用 AI 工具时仍需保持审慎的质量控制与工程判断。","time":"1d","title":"慢下来：引导 AI 编写与交付高质量代码的思考","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506065449806200833"},
+  {"author":"Abdallah Meknas","id":"7506362714680811521","profileUrl":"https://www.linkedin.com/in/ACoAACPKuJcBbtHSEn5Mgv67uk8TD_hWjcPQxI8","source":"LinkedIn · 生信流程开发","text":"Sanofi 生物信息工程师 Abdallah Meknas 分享学习 Nextflow 的核心模式，将每个 process 拆解为名称、指令、输入、输出和脚本五个组成部分，并剖析新手因独立目录隔离机制常踩的绝对路径、线程配置和 emit 遗漏等错误。","time":"2d","title":"两周掌握生信 Nextflow：流程骨架与常见报错解析","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506362714680811521"},
+
+{"author":"OpenTeams","id":"7506065449806200833","profileUrl":"https://www.linkedin.com/company/openteams/","source":"openteams.com · AI 辅助编程","text":"OpenTeams 的 Johnny Bouder 指出，AI 辅助编程的风险不仅在于模型可能犯错，还在于快速生成的流程容易让团队忽略原有的质量检查与工程审阅，强调在使用 AI 工具时仍需保持审慎的质量控制与工程判断。","time":"1d","title":"慢下来：引导 AI 编写与交付高质量代码的思考","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506065449806200833"},
 
   {"author":"Abdallah Meknas","id":"7506007145348382721","profileUrl":"https://www.linkedin.com/in/ACoAACPKuJcBbtHSEn5Mgv67uk8TD_hWjcPQxI8","source":"LinkedIn · 生物信息与 AI 验证","text":"Sanofi 生物信息工程师 Abdallah Meknas 总结了 LLM 编写代码时不会抛出报错但会导致静默错误的 7 种模式，包括引用不匹配、静默修改配置、隐含生物学假设、上下文权重衰减、API 版本默认值冲突、静默丢失数据及为通过测试篡改预期值。","time":"1d","title":"AI 生成代码不报错却悄然出错的七种模式","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506007145348382721"},
 

@@ -1,7 +1,7 @@
 # Saved Knowledge
 
-A searchable personal library built from 6,363 saved items: 274 LinkedIn posts,
-2,737 X posts, and 3,352 public GitHub starred repositories. The site organizes
+A searchable personal library built from 6,390 saved items: 275 LinkedIn posts,
+2,760 X posts, and 3,355 public GitHub starred repositories. The site organizes
 them by source, topic, author or owner, programming language, and activity, and
 keeps a direct link to every original item.
 
