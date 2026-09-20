@@ -2,6 +2,91 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+  "id": "x-2101634002272526487",
+  "author": "Matt Dancho (Business Science)",
+  "handle": "@mdancho84",
+  "profileUrl": "https://x.com/mdancho84",
+  "time": "2026-09-20T11:26:07.000Z",
+  "text": "Matt Dancho 引用《Nature》相关报道，探讨自动化与 AI 对传统数据分析及建模岗位带来的冲击与转变。",
+  "title": "探讨数据分析与建模岗位的未来",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/mdancho84/status/2101634002272526487"
+},
+  {
+  "id": "x-2101495687384793402",
+  "author": "Po-Shen Loh",
+  "handle": "@PoShenLoh",
+  "profileUrl": "https://x.com/PoShenLoh",
+  "time": "2026-09-20T02:16:30.000Z",
+  "text": "罗博深（Po-Shen Loh）呼吁各领域确立促进人类繁荣的核心价值观，并分享陶哲轩博客转载的客座文章《Why Do We Need Human Mathematicians Anymore?》，探讨数学与 AI 的未来。正文在列表中截断。",
+  "title": "陶哲轩博客转载罗博深文章：为什么我们仍需要人类数学家？",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/PoShenLoh/status/2101495687384793402"
+},
+  {
+  "id": "x-2101641948314656931",
+  "author": "Yan(赚钱版)",
+  "handle": "@ZhanlinYan74392",
+  "profileUrl": "https://x.com/ZhanlinYan74392",
+  "time": "2026-09-20T11:57:41.000Z",
+  "text": "Yan 整理了一份适合情侣与约会场景的情感氛围感电影合集，并按照观影氛围体验进行排序分享。正文在列表中截断。",
+  "title": "情感与氛围感电影观影清单整理",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/ZhanlinYan74392/status/2101641948314656931"
+},
+  {
+  "id": "x-2101521191412572577",
+  "author": "松井健太郎 睡眠・精神医学 (Kentaro Matsui)",
+  "handle": "@matsuikentaro1",
+  "profileUrl": "https://x.com/matsuikentaro1",
+  "time": "2026-09-20T03:57:51.000Z",
+  "text": "松井健太郎更新其开源 Claude Code 技能「humanizer_academic」，旨在修正论文写作中由大模型编程导向优化带来的生硬遣词与 AI 腔调，提升学术文本的可读性。",
+  "title": "humanizer_academic：去除英文论文中 AI 腔调的 Claude 技能",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/matsuikentaro1/status/2101521191412572577"
+},
+  {
+  "id": "x-2101286462691930432",
+  "author": "Steven Strogatz",
+  "handle": "@stevenstrogatz",
+  "profileUrl": "https://x.com/stevenstrogatz",
+  "time": "2026-09-19T12:25:07.000Z",
+  "text": "数学家 Steven Strogatz 引用 Dan Rockmore 发表在《纽约客》上的文章，指出在机器廉价传递信息的时代，教学的真正挑战在于稳定地创造出让学生渴望的深刻理解时刻。",
+  "title": "教学的核心挑战在于激发真正的理解时刻",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/stevenstrogatz/status/2101286462691930432"
+},
+  {
+  "id": "x-2101365421664289103",
+  "author": "Keegan",
+  "handle": "@keegabit",
+  "profileUrl": "https://x.com/keegabit",
+  "time": "2026-09-19T17:38:52.000Z",
+  "text": "Keegan 推荐 Sunil Pai 的博文《The senior engineer death spiral》，强调在职业生涯中结交能在犯错前提供诚恳高质量建议的良师益友至关重要。",
+  "title": "资深工程师的死亡螺旋与高质量建议的重要性",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/keegabit/status/2101365421664289103"
+},
+  {
+  "id": "x-2101418507371983281",
+  "author": "BURKOV",
+  "handle": "@burkov",
+  "profileUrl": "https://x.com/burkov",
+  "time": "2026-09-19T21:09:49.000Z",
+  "text": "Andriy Burkov 调侃学术界利用 AI Agent 的自动化工作流：从已发表论文的「Future Work」章节提取方向，指示 Agent 设计实验并执行。正文在列表中截断。",
+  "title": "利用 Agent 自动化学术研究工作流的思考",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/burkov/status/2101418507371983281"
+},
+
+  {
   "id": "x-2101368339033706924",
   "author": "のび太",
   "handle": "@nobita_3D",

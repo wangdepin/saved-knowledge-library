@@ -20,7 +20,11 @@ export type SavedPost = {
 };
 
 export const savedPosts: SavedPost[] = [
-  {"author":"Abdallah Meknas","id":"7506362714680811521","profileUrl":"https://www.linkedin.com/in/ACoAACPKuJcBbtHSEn5Mgv67uk8TD_hWjcPQxI8","source":"LinkedIn · 生信流程开发","text":"Sanofi 生物信息工程师 Abdallah Meknas 分享学习 Nextflow 的核心模式，将每个 process 拆解为名称、指令、输入、输出和脚本五个组成部分，并剖析新手因独立目录隔离机制常踩的绝对路径、线程配置和 emit 遗漏等错误。","time":"2d","title":"两周掌握生信 Nextflow：流程骨架与常见报错解析","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506362714680811521"},
+  {"author":"Lorena A. Barba","id":"7507101137028702208","profileUrl":"https://www.linkedin.com/in/ACoAAANWiCMBSNQDsu8wIJ3FXVJNwtVg_y5KZLY","source":"lorenabarba.com · 计算流体力学","text":"乔治华盛顿大学教授 Lorena A. Barba 分享经典入门教程《CFD Python: 12 Steps to Navier-Stokes》，针对近期关于纳维-斯托克斯方程光滑解有限时间爆破的学术讨论，强调即便理论解存在性尚存难题，工程师与科学家也能通过 Python 代码循序渐进构建二维数值求解器。","time":"1d","title":"CFD Python：从零上手 Navier–Stokes 方程数值求解","url":"https://www.linkedin.com/feed/update/urn:li:activity:7507101137028702208"},
+
+  {"author":"Yusuf Pisan","id":"7507167593321959424","profileUrl":"https://www.linkedin.com/in/ACoAAAAA3-wBlyZepsHZdJhvC8H9yPHH9ZpIzOE","source":"education2ai.substack.com · AI 与高等教育","text":"大学教授 Yusuf Pisan 分享与 Fable 5.1 关于 AI 取代白领岗位背景下计算机专业教育价值的辩论，探讨在 AI 规模化生成内容的时代，高校的核心价值在于提供思维架构、反馈环境以及培养识别与验证模型错误的稀缺能力。","time":"22h","title":"AI 时代的计算机教育与大学价值之辩","url":"https://www.linkedin.com/feed/update/urn:li:activity:7507167593321959424"},
+
+{"author":"Abdallah Meknas","id":"7506362714680811521","profileUrl":"https://www.linkedin.com/in/ACoAACPKuJcBbtHSEn5Mgv67uk8TD_hWjcPQxI8","source":"LinkedIn · 生信流程开发","text":"Sanofi 生物信息工程师 Abdallah Meknas 分享学习 Nextflow 的核心模式，将每个 process 拆解为名称、指令、输入、输出和脚本五个组成部分，并剖析新手因独立目录隔离机制常踩的绝对路径、线程配置和 emit 遗漏等错误。","time":"2d","title":"两周掌握生信 Nextflow：流程骨架与常见报错解析","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506362714680811521"},
 
 {"author":"OpenTeams","id":"7506065449806200833","profileUrl":"https://www.linkedin.com/company/openteams/","source":"openteams.com · AI 辅助编程","text":"OpenTeams 的 Johnny Bouder 指出，AI 辅助编程的风险不仅在于模型可能犯错，还在于快速生成的流程容易让团队忽略原有的质量检查与工程审阅，强调在使用 AI 工具时仍需保持审慎的质量控制与工程判断。","time":"1d","title":"慢下来：引导 AI 编写与交付高质量代码的思考","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506065449806200833"},
 
