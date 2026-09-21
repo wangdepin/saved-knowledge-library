@@ -20,7 +20,9 @@ export type SavedPost = {
 };
 
 export const savedPosts: SavedPost[] = [
-  {"author":"Lorena A. Barba","id":"7507101137028702208","profileUrl":"https://www.linkedin.com/in/ACoAAANWiCMBSNQDsu8wIJ3FXVJNwtVg_y5KZLY","source":"lorenabarba.com · 计算流体力学","text":"乔治华盛顿大学教授 Lorena A. Barba 分享经典入门教程《CFD Python: 12 Steps to Navier-Stokes》，针对近期关于纳维-斯托克斯方程光滑解有限时间爆破的学术讨论，强调即便理论解存在性尚存难题，工程师与科学家也能通过 Python 代码循序渐进构建二维数值求解器。","time":"1d","title":"CFD Python：从零上手 Navier–Stokes 方程数值求解","url":"https://www.linkedin.com/feed/update/urn:li:activity:7507101137028702208"},
+  {"author":"Kyle Higgins","id":"7506373478393085952","profileUrl":"https://www.linkedin.com/in/ACoAAEmuzR0Ba21AH602r-7WB_rs6pc-ZsICJsA","source":"higginsinformatics.substack.com · 生物信息学思考","text":"帝国理工学院与 Deeplabel 的 Kyle Higgins 撰写文章《An Essay on Bioinformatics》，结合多年生物信息学教学经验，回顾该领域与数学及计算的长期联系、日常研发形态，并探讨在 AI 时代如何重新审视真正关键的专业技能。","time":"4d","title":"生信漫谈：学科演变、数学纽带与 AI 时代的关键技能","url":"https://www.linkedin.com/feed/update/urn:li:activity:7506373478393085952"},
+
+{"author":"Lorena A. Barba","id":"7507101137028702208","profileUrl":"https://www.linkedin.com/in/ACoAAANWiCMBSNQDsu8wIJ3FXVJNwtVg_y5KZLY","source":"lorenabarba.com · 计算流体力学","text":"乔治华盛顿大学教授 Lorena A. Barba 分享经典入门教程《CFD Python: 12 Steps to Navier-Stokes》，针对近期关于纳维-斯托克斯方程光滑解有限时间爆破的学术讨论，强调即便理论解存在性尚存难题，工程师与科学家也能通过 Python 代码循序渐进构建二维数值求解器。","time":"1d","title":"CFD Python：从零上手 Navier–Stokes 方程数值求解","url":"https://www.linkedin.com/feed/update/urn:li:activity:7507101137028702208"},
 
   {"author":"Yusuf Pisan","id":"7507167593321959424","profileUrl":"https://www.linkedin.com/in/ACoAAAAA3-wBlyZepsHZdJhvC8H9yPHH9ZpIzOE","source":"education2ai.substack.com · AI 与高等教育","text":"大学教授 Yusuf Pisan 分享与 Fable 5.1 关于 AI 取代白领岗位背景下计算机专业教育价值的辩论，探讨在 AI 规模化生成内容的时代，高校的核心价值在于提供思维架构、反馈环境以及培养识别与验证模型错误的稀缺能力。","time":"22h","title":"AI 时代的计算机教育与大学价值之辩","url":"https://www.linkedin.com/feed/update/urn:li:activity:7507167593321959424"},
 

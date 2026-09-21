@@ -2,6 +2,115 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+  "id": "x-2101753127284428906",
+  "author": "ᴅᴀɴɪᴇʟ ᴍɪᴇssʟᴇʀ 🛡️",
+  "handle": "@DanielMiessler",
+  "profileUrl": "https://x.com/DanielMiessler",
+  "time": "2026-09-20T19:19:28.000Z",
+  "text": "Daniel Miessler 推荐 Boris Cherny 的公开便签《I am often wrong》，探讨在 AI 时代打造产品时，坦诚面对自身判断中的错误并将其转化为持续改进的杠杆。",
+  "title": "Boris Cherny 谈接受错误并借此迭代优化",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/DanielMiessler/status/2101753127284428906"
+},
+  {
+  "id": "x-2101961569491935465",
+  "author": "Ronin",
+  "handle": "@DeRonin_",
+  "profileUrl": "https://x.com/DeRonin_",
+  "time": "2026-09-21T09:07:45.000Z",
+  "text": "Ronin 分享六个月成为机器人工程师的求职路径与学习资源，指出机器人领域技术岗位对传统学历限制相对宽松，并梳理了从基础认证到技能进阶的工作流。正文在列表中截断。",
+  "title": "机器人工程师求职路径与技能资源指南",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/DeRonin_/status/2101961569491935465"
+},
+  {
+  "id": "x-2101843747487220093",
+  "author": "yan（约会版）",
+  "handle": "@ZhanlinYan74392",
+  "profileUrl": "https://x.com/ZhanlinYan74392",
+  "time": "2026-09-21T01:19:34.000Z",
+  "text": "yan 详细复盘在不报班的情况下，利用 Claude Code 辅助备考、每天学习两小时、用时两个月将雅思成绩从 6 分提升至 7.5 分的自学流程与步骤。正文在列表中截断。",
+  "title": "两个月每天两小时用 Claude Code 自学雅思 6 到 7.5 分指南",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/ZhanlinYan74392/status/2101843747487220093"
+},
+  {
+  "id": "x-2101397587731382602",
+  "author": "NetworkChuck",
+  "handle": "@NetworkChuck",
+  "profileUrl": "https://x.com/NetworkChuck",
+  "time": "2026-09-19T19:46:41.000Z",
+  "text": "NetworkChuck 分享学习感悟，强调持续出勤与枯燥的日常重复胜过单纯的天赋，是考取认证、精通编程及攻克难题的核心路径。",
+  "title": "坚持胜过天赋：日常微小积累的复利价值",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/NetworkChuck/status/2101397587731382602"
+},
+  {
+  "id": "x-2101643877744845154",
+  "author": "Sandeep Jethwani",
+  "handle": "@sandeepjethwani",
+  "profileUrl": "https://x.com/sandeepjethwani",
+  "time": "2026-09-20T12:05:21.000Z",
+  "text": "Sandeep Jethwani 发表长文《Why salary isn't enough in the age of AI》，以历史商业案例切入，探讨在 AI 带来产业重塑的背景下资产积累与职业回报逻辑的转变。正文在列表中截断。",
+  "title": "探讨在 AI 时代为何仅靠薪水已难以立足",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/sandeepjethwani/status/2101643877744845154"
+},
+  {
+  "id": "x-2044408645916475900",
+  "author": "Jason Scharf",
+  "handle": "@Jason_A_Scharf",
+  "profileUrl": "https://x.com/Jason_A_Scharf",
+  "time": "2026-04-15T13:32:59.000Z",
+  "text": "Jason Scharf 分享孩子在创新实验学校 Alpha School 就读的体验与思考，探讨新型教育模式如何激发学生的内在学习动力。正文在列表中截断。",
+  "title": "探访奥斯汀创新学校 Alpha School 的教育体验",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/Jason_A_Scharf/status/2044408645916475900"
+},
+  {
+  "id": "x-2101325204635169211",
+  "author": "zooko🛡🦓🦓🦓 ⓩ",
+  "handle": "@zooko",
+  "profileUrl": "https://x.com/zooko",
+  "time": "2026-09-19T14:59:04.000Z",
+  "text": "zooko 推荐安全专家 Halvar Flake（Thomas Dullien）在 BlueHat Asia 2026 上的演讲幻灯片《An age of experimentation》，称其值得细致研读与沉思。",
+  "title": "推荐 Thomas Dullien 在 BlueHat Asia 2026 演讲幻灯片",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/zooko/status/2101325204635169211"
+},
+  {
+  "id": "x-2101667782135779652",
+  "author": "Phil Eaton",
+  "handle": "@eatonphil",
+  "profileUrl": "https://x.com/eatonphil",
+  "time": "2026-09-20T13:40:21.000Z",
+  "text": "Phil Eaton 分享关于求职思考与建议的短篇博文（theconsensus.dev），为正在寻找机会的技术人员提供实用参考。",
+  "title": "求职实用博文推荐",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/eatonphil/status/2101667782135779652"
+},
+  {
+  "id": "x-2101279540597215417",
+  "author": "Ruxandra Teslo 🧬",
+  "handle": "@RuxandraTeslo",
+  "profileUrl": "https://x.com/RuxandraTeslo",
+  "time": "2026-09-19T11:57:37.000Z",
+  "text": "Ruxandra Teslo 发表文章《Education as an AI safety area》，担忧过度将思考委托给机器会导致人类逐渐丧失培养心智的习惯与制度，探讨在 AI 时代维护人类独立思考能力的重要性。正文在列表中截断。",
+  "title": "将教育视为 AI 安全领域的思考",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/RuxandraTeslo/status/2101279540597215417"
+},
+
+  {
   "id": "x-2101634002272526487",
   "author": "Matt Dancho (Business Science)",
   "handle": "@mdancho84",
