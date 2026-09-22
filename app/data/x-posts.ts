@@ -2,6 +2,31 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+  "id": "x-2102052457480413430",
+  "author": "沐阳",
+  "handle": "@yyyole",
+  "profileUrl": "https://x.com/yyyole",
+  "time": "2026-09-21T15:08:54.000Z",
+  "text": "沐阳发推讨论通过系统性吃透相关算法与技术题目，对转型从事 AI 领域工作的实际帮助与可行性。",
+  "title": "探讨吃透算法题目对转行 AI 的帮助",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/yyyole/status/2102052457480413430"
+},
+  {
+  "id": "x-2102079925310329188",
+  "author": "David Yanacek",
+  "handle": "@dyanacek",
+  "profileUrl": "https://x.com/dyanacek",
+  "time": "2026-09-21T16:58:03.000Z",
+  "text": "David Yanacek 发表博文《It was never about coding》，探讨在智能体辅助编程（Agentic coding）时代程序员的身份认同，指出代码只是最终的交付物，工程师的核心职责始终在于系统理解与工程问题解决。",
+  "title": "代码只是产物：程序员在 Agent 编程时代的真正价值",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/dyanacek/status/2102079925310329188"
+},
+
+  {
   "id": "x-2101753127284428906",
   "author": "ᴅᴀɴɪᴇʟ ᴍɪᴇssʟᴇʀ 🛡️",
   "handle": "@DanielMiessler",
