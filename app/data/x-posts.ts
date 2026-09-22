@@ -2,6 +2,79 @@ import type { SavedPost } from "./posts";
 
 export const xPosts: SavedPost[] = [
   {
+  "id": "x-2102267401672769967",
+  "author": "Phillip Isola",
+  "handle": "@phillip_isola",
+  "profileUrl": "https://x.com/phillip_isola",
+  "time": "2026-09-22T05:23:01.000Z",
+  "text": "麻省理工学院副教授 Phillip Isola 分享整理自 Claude 自述的写作特征文档（claude-tells.pdf），呼吁研究者和作者避免千篇一律的大模型套话包装，鼓励呈现真实的文字思考与原始图表。",
+  "title": "MIT 教授 Phillip Isola：识别并避免 Claude 式套话写作特征",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/phillip_isola/status/2102267401672769967"
+},
+  {
+  "id": "x-2102137063373996319",
+  "author": "Visual Studio Code",
+  "handle": "@code",
+  "profileUrl": "https://x.com/code",
+  "time": "2026-09-21T20:45:06.000Z",
+  "text": "VS Code 官方推出 Agent-First 深度教程，演示如何在编辑器中高效协同 AI Agent，涵盖智能体工作流、环境治理、调试诊断、运行环境与应用构建实践。正文在列表中截断。",
+  "title": "VS Code 官方教程：智能体优先（Agent-First）开发实践",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/code/status/2102137063373996319"
+},
+  {
+  "id": "x-2102391145284378778",
+  "author": "Roland.W",
+  "handle": "@rwayne",
+  "profileUrl": "https://x.com/rwayne",
+  "time": "2026-09-22T13:34:44.000Z",
+  "text": "Roland.W 转发龙海的实践文章《写在严肃阅读之后：我是如何“严肃听播客”》，介绍利用英文文字稿、AI 整理初稿、人工审校与合集反复研读的听力精进流程。",
+  "title": "严肃听播客工作流与英文听力提升实践",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/rwayne/status/2102391145284378778"
+},
+  {
+  "id": "x-2102393729910997445",
+  "author": "Ming \"Tommy\" Tang",
+  "handle": "@tangming2005",
+  "profileUrl": "https://x.com/tangming2005",
+  "time": "2026-09-22T13:45:00.000Z",
+  "text": "生信专家 Tommy Tang 分享使用 Claude Code 的经验，通过配置 CLAUDE.md 文件固化 RNA-seq 分析流程、参考基因组与 DESeq2 参数等项目上下文，彻底解决每次开新会话都要重复解释的痛点。",
+  "title": "用 CLAUDE.md 固化生信流程上下文避免重复说明",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/tangming2005/status/2102393729910997445"
+},
+  {
+  "id": "x-2102405717424791761",
+  "author": "Yacine Mahdid",
+  "handle": "@yacinelearning",
+  "profileUrl": "https://x.com/yacinelearning",
+  "time": "2026-09-22T14:32:38.000Z",
+  "text": "Yacine Mahdid 推荐关于读博与科学研究心态的短文，特别认同保持积极视角的态度，指出即使质量欠佳的论文中也往往蕴藏着值得发掘的宝贵知识点。",
+  "title": "博士科研心法：在不完美的研究中汲取积极价值",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/yacinelearning/status/2102405717424791761"
+},
+  {
+  "id": "x-2101966665307287830",
+  "author": "candy",
+  "handle": "@shenxiankk",
+  "profileUrl": "https://x.com/shenxiankk",
+  "time": "2026-09-21T09:28:00.000Z",
+  "text": "candy 推荐汇集各大数字阅读平台热门书目的开源 GitHub 书单索引项目，涵盖文学、经管、技术手册等类目。正文在列表中截断。",
+  "title": "涵盖多平台的十万册开源书籍索引仓库分享",
+  "source": "X / Twitter · 收藏摘要",
+  "platform": "X",
+  "url": "https://x.com/shenxiankk/status/2101966665307287830"
+},
+
+  {
   "id": "x-2102052457480413430",
   "author": "沐阳",
   "handle": "@yyyole",
