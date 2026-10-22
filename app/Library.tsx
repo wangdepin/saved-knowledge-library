@@ -607,7 +607,7 @@ export default function Library() {
         <p>
           内容版权归原作者所有
           <br />
-          最后整理：2026 年 8 月 11 日
+          最后整理：2026 年 10 月 22 日
         </p>
       </footer>
     </main>
