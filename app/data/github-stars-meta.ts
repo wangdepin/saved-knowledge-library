@@ -1,60 +1,60 @@
 export const githubStarsMeta = {
-  "count": 3356,
-  "syncedAt": "2026-09-22T19:01:46.978Z",
+  "count": 3410,
+  "syncedAt": "2026-10-22T14:42:52.429Z",
   "activityCounts": {
-    "活跃": 1149,
-    "近期维护": 622,
-    "低频维护": 1470,
-    "已归档": 115
+    "活跃": 1183,
+    "近期维护": 632,
+    "低频维护": 1478,
+    "已归档": 117
   },
   "topLanguages": [
     {
       "language": "Python",
-      "count": 967
+      "count": 984
     },
     {
       "language": "未标注",
-      "count": 514
+      "count": 513
     },
     {
       "language": "Jupyter Notebook",
-      "count": 339
+      "count": 340
+    },
+    {
+      "language": "TypeScript",
+      "count": 246
     },
     {
       "language": "R",
       "count": 230
     },
     {
-      "language": "TypeScript",
-      "count": 227
-    },
-    {
       "language": "JavaScript",
-      "count": 184
+      "count": 196
     },
     {
       "language": "HTML",
-      "count": 171
+      "count": 174
     },
     {
       "language": "Shell",
-      "count": 117
+      "count": 118
     },
     {
       "language": "Rust",
-      "count": 109
+      "count": 108
     },
     {
       "language": "C++",
       "count": 60
     },
     {
-      "language": "TeX",
-      "count": 47
+      "language": "Go",
+      "count": 48
     },
     {
-      "language": "Go",
-      "count": 46
+      "language": "TeX",
+      "count": 48
     }
   ]
 } as const;
