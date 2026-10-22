@@ -156,7 +156,7 @@ export default function Library() {
   useEffect(() => {
     let cancelled = false;
 
-    fetch("data/github-stars.json")
+    fetch(`data/github-stars.json?v=${encodeURIComponent(githubStarsMeta.syncedAt)}`)
       .then((response) => {
         if (!response.ok) throw new Error(`GitHub index: ${response.status}`);
         return response.json() as Promise<SavedPost[]>;

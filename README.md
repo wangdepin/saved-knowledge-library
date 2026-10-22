@@ -42,6 +42,8 @@ npm run sync:github-stars
 The sync writes public repository data to `public/data/github-stars.json` and
 updates the lightweight count metadata used during server rendering. Private
 repositories are excluded from the public export.
+The browser requests the index with its sync timestamp so a newly published
+export does not reuse a cached index from the previous update.
 
 ## LinkedIn and X updates
 
